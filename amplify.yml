@@ -1,4 +1,14 @@
 version: 2
+backend:
+  type: cdk
+  cdk:
+    preinstall:
+      - cd amplify/lambda && npm install
+    build:
+      - tsc
+      - cdk synth
+    deploy:
+      - cdk deploy --require-approval never
 frontend:
   phases:
     build:

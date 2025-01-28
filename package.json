@@ -1,0 +1,17 @@
+{
+  "name": "aws-amplify-messages",
+  "version": "1.0.0",
+  "description": "Message board with AWS Amplify Gen 2",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "cdk": "cdk"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "aws-cdk": "^2.0.0",
+    "aws-cdk-lib": "^2.0.0",
+    "constructs": "^10.0.0",
+    "typescript": "^5.0.0"
+  }
+}
