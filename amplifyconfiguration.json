@@ -1,0 +1,13 @@
+{
+    "aws_project_region": "us-east-1",
+    "aws_appsync_graphqlEndpoint": "AUTO",
+    "aws_appsync_region": "us-east-1",
+    "aws_appsync_authenticationType": "API_KEY",
+    "aws_cloud_logic_custom": [
+        {
+            "name": "messageFunction",
+            "endpoint": "AUTO",
+            "region": "us-east-1"
+        }
+    ]
+}

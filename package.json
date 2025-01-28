@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Message board with AWS Amplify Gen 2",
   "scripts": {
-    "dev": "amplify sandbox"
+    "dev": "amplify sandbox",
+    "build": "tsc && amplify build",
+    "deploy": "amplify push"
   },
   "dependencies": {
     "@aws-sdk/client-dynamodb": "^3.0.0",

@@ -1,0 +1,16 @@
+{
+  "projectName": "aws-amplify-messages",
+  "envName": "main",
+  "defaultEditor": "code",
+  "appId": "d5gokewjrkkr0",
+  "frontend": "javascript",
+  "javascript": {
+    "framework": "none",
+    "config": {
+      "SourceDir": ".",
+      "DistributionDir": ".",
+      "BuildCommand": "echo \"No build required\"",
+      "StartCommand": "echo \"No start required\""
+    }
+  }
+}

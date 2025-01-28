@@ -2,6 +2,29 @@
   "features": {
     "backend": {
       "enabled": true
+    },
+    "auth": {
+      "enabled": true,
+      "config": {
+        "loginWith": {
+          "email": true,
+          "phone": false,
+          "username": false
+        }
+      }
+    },
+    "api": {
+      "enabled": true,
+      "config": {
+        "defaultAuthorizationMode": "API_KEY",
+        "apiKeyExpirationDays": 30
+      }
+    }
+  },
+  "backend": {
+    "type": "app",
+    "data": {
+      "schemaPath": "amplify/data/schema.graphql"
     }
   }
 }
