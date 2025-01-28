@@ -14,12 +14,13 @@
     "uuid": "^9.0.0"
   },
   "devDependencies": {
-    "@aws-amplify/backend": "^0.3.2",
-    "@aws-amplify/backend-cli": "^0.3.2",
-    "@aws-amplify/backend-auth": "^0.3.2",
-    "@aws-amplify/backend-data": "^0.3.2",
-    "@aws-amplify/backend-function": "^0.3.2",
+    "@aws-amplify/backend": "^0.6.0",
+    "@aws-amplify/backend-cli": "^0.9.1",
+    "@aws-amplify/backend-auth": "^0.4.0",
+    "@aws-amplify/backend-data": "^0.7.0",
+    "@aws-amplify/backend-function": "^0.5.0",
     "aws-cdk-lib": "^2.127.0",
+    "constructs": "^10.0.0",
     "@types/node": "^20.0.0",
     "@types/uuid": "^9.0.0",
     "typescript": "^5.0.0"
