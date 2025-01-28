@@ -1,7 +1,8 @@
 import { defineBackend } from '@aws-amplify/backend';
-import { defineAuth } from '@aws-amplify/backend/auth';
-import { defineFunction } from '@aws-amplify/backend/function';
-import { defineData } from '@aws-amplify/backend/data';
+import { defineAuth } from '@aws-amplify/backend-auth';
+import { defineFunction } from '@aws-amplify/backend-function';
+import { defineData } from '@aws-amplify/backend-data';
+import { type ClientSchema, type Schema } from '@aws-amplify/backend-data';
 
 const auth = defineAuth({
   loginWith: {
@@ -11,6 +12,16 @@ const auth = defineAuth({
   }
 });
 
+type MessageSchema = {
+  Message: {
+    id: string;
+    message: string;
+    timestamp: number;
+    createdAt: string;
+    updatedAt: string;
+  }
+};
+
 const data = defineData({
   schema: 'amplify/data/schema.graphql',
   authorizationModes: {
@@ -19,17 +30,11 @@ const data = defineData({
       expiresInDays: 30
     }
   }
-});
+}) satisfies ClientSchema<Schema<MessageSchema>>;
 
 const messageFunction = defineFunction({
   name: 'messageFunction',
-  entry: 'amplify/message-function/handler.ts',
-  environment: {
-    TABLE_NAME: 'messages'
-  },
-  permissions: {
-    tables: ['messages']
-  }
+  entry: 'amplify/message-function/handler.ts'
 });
 
 export const backend = defineBackend({

@@ -1,10 +1,21 @@
-import { defineFunction } from "@aws-amplify/backend";
-import { Schema } from "@aws-amplify/backend-schema";
+import { defineFunction } from '@aws-amplify/backend-function';
+import { type FunctionResources } from '@aws-amplify/backend-function';
 
 export const messageFunction = defineFunction({
-  name: "message-function",
-  entry: "./handler.ts",
+  name: 'messageFunction',
+  entry: './handler.ts',
+  permissions: {
+    resources: [
+      {
+        type: 'dynamodb',
+        actions: ['dynamodb:PutItem', 'dynamodb:GetItem', 'dynamodb:Query', 'dynamodb:Scan'],
+        resources: ['messages']
+      }
+    ]
+  },
   environment: {
-    TABLE_NAME: "messages"
+    variables: {
+      TABLE_NAME: 'messages'
+    }
   }
-});
+} as FunctionResources);

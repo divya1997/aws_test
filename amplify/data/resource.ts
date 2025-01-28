@@ -1,17 +1,22 @@
-import { defineData } from '@aws-amplify/backend';
-import { type ClientSchema } from '@aws-amplify/data-schema';
+import { defineData } from '@aws-amplify/backend-data';
+import { type ClientSchema, type Schema } from '@aws-amplify/backend-data';
 
-const schema = {
+type MessageSchema = {
   Message: {
-    primaryKey: { id: 'string' },
-    sortKey: { timestamp: 'number' },
-    values: {
-      message: 'string'
-    }
+    id: string;
+    message: string;
+    timestamp: number;
+    createdAt: string;
+    updatedAt: string;
   }
-} satisfies ClientSchema;
+};
 
 export const data = defineData({
-  schema,
-  name: 'messages'
-});
+  schema: './schema.graphql',
+  authorizationModes: {
+    defaultAuthorizationMode: 'API_KEY',
+    apiKeyAuthorizationMode: {
+      expiresInDays: 30
+    }
+  }
+}) satisfies ClientSchema<Schema<MessageSchema>>;
