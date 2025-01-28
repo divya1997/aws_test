@@ -1,5 +1,5 @@
-// We'll update this with the actual API endpoint after creating it
-const API_ENDPOINT = '';
+// Replace YOUR_API_ENDPOINT with the actual endpoint from CloudFormation outputs
+const API_ENDPOINT = 'YOUR_API_ENDPOINT/messages';
 
 document.addEventListener('DOMContentLoaded', () => {
     const content = document.querySelector('.content');

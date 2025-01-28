@@ -1,25 +1,9 @@
 version: 2
-backend:
-  type: cdk
-  cdk:
-    preinstall:
-      - npm install
-      - cd amplify/lambda && npm install && cd ../..
-    build:
-      - npm run build
-      - npx cdk synth
-    deploy:
-      - npx cdk deploy --require-approval never
-    postDeploy:
-      - echo "API endpoint can be found in the CloudFormation outputs"
 frontend:
   phases:
-    preBuild:
-      commands:
-        - echo "No build required for static site"
     build:
       commands:
-        - echo "Deploying static files"
+        - echo "No build required for static site"
   artifacts:
     baseDirectory: /
     files:
