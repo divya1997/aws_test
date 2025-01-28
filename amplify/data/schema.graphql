@@ -1,0 +1,7 @@
+type Message @model {
+  id: ID! @primaryKey
+  message: String!
+  timestamp: AWSTimestamp! @index(sortKeyFields: ["id"])
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
